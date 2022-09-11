@@ -22,27 +22,39 @@ const HeadTagEditor = ({ profile, theme, googleAnalytics, social }) => {
                 gtag('config', '${googleAnalytics.id}');`}
             </script>
           )}
-          <title>Portfolio of {profile.name}</title>
+          <title>{profile.name} | Homepage</title>
           <meta
             name="theme-color"
             content={isDarkishTheme(theme) ? '#000000' : '#ffffff'}
           />
 
-          <meta name="description" content={profile.bio} />
+          <meta
+            name="description"
+            content="Projects made for anyone to enjoy. Check out our page or go to our Github organization to see what we've been up to lately."
+          />
 
-          <meta itemProp="name" content={`Portfolio of ${profile.name}`} />
-          <meta itemProp="description" content={profile.bio} />
+          <meta itemProp="name" content={`${profile.name} | Homepage`} />
+          <meta
+            itemProp="description"
+            content="Projects made for anyone to enjoy. Check out our page or go to our Github organization to see what we've been up to lately."
+          />
           <meta itemProp="image" content={profile.avatar} />
 
-          <meta property="og:url" content={social?.website || ''} />
+          <meta property="og:url" content="https://playantares.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={`Portfolio of ${profile.name}`} />
-          <meta property="og:description" content={profile.bio} />
+          <meta
+            property="og:description"
+            content="Projects made for anyone to enjoy. Check out our page or go to our Github organization to see what we've been up to lately."
+          />
           <meta property="og:image" content={profile.avatar} />
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={`Portfolio of ${profile.name}`} />
-          <meta name="twitter:description" content={profile.bio} />
+          <meta name="twitter:title" content={`${profile.name} | Homepage`} />
+          <meta
+            name="twitter:description"
+            content="Projects made for anyone to enjoy. Check out our page or go to our Github organization to see what we've been up to lately."
+          />
           <meta name="twitter:image" content={profile.avatar} />
         </Helmet>
       )}
